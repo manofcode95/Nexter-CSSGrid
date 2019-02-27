@@ -1,0 +1,45 @@
+.sidebar{
+    background:$color-primary;
+    grid-column: side-start/side-end;
+    grid-row: 1/-1;
+    display:grid;
+    justify-items: center;
+    padding:4rem 0;
+
+    @include respond(large){
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        align-self: center;
+        justify-items: end;
+    }
+}
+
+.side{
+    &__nav{
+        background:white;
+        width:4rem;
+        height:2.5px;
+        position: relative;
+
+        &:before, &:after{
+            content:"";
+            position: absolute;
+            width:100%;
+            height:2.5px;
+            display: block;
+            background:white; 
+        }
+
+        &:before{
+            top:-1.3rem;
+        }
+
+        &:after{
+            top:1.3rem;
+        }
+
+        @include respond(large){
+            margin-right: 4rem;
+        }
+    }
+}
